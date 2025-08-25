@@ -1,0 +1,111 @@
+{
+    "classrooms": [
+        {
+            "id": 1,
+            "name": "Aula 101",
+            "teachersIds": [
+                1,
+                2
+            ],
+            "studentsIds": [
+                1,
+                2,
+                3
+            ],
+            "resourcesIds": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Aula 202",
+            "teachersIds": [
+                3
+            ],
+            "studentsIds": [
+                4,
+                5
+            ],
+            "resourcesIds": [
+                3
+            ]
+        }
+    ],
+    "teachers": [
+        {
+            "id": 1,
+            "name": "Maria Gonzalez",
+            "subject": "Matematica"
+        },
+        {
+            "id": 2,
+            "name": "Carlos Perez",
+            "subject": "Historia"
+        },
+        {
+            "id": 3,
+            "name": "Lucia Fernandez",
+            "subject": "Ingles"
+        }
+    ],
+    "students": [
+        {
+            "id": 1,
+            "name": "Anna Lopez",
+            "age": 15
+        },
+        {
+            "id": 2,
+            "name": "Charles Diaz",
+            "age": 16
+        },
+        {
+            "id": 3,
+            "name": "Laura Sanchez",
+            "age": 15
+        },
+        {
+            "id": 4,
+            "name": "Diego Torres",
+            "age": 17
+        },
+        {
+            "id": 5,
+            "name": "Valentina Castro",
+            "age": 16
+        }
+    ],
+    "resources": [
+        {
+            "id": 1,
+            "name": "Proyector",
+            "quantity": {
+                "total": 2,
+                "available": 2,
+                "inUse": 0,
+                "underMaintenance": 0
+            }
+        },
+        {
+            "id": 2,
+            "name": "Sillas",
+            "quantity": {
+                "total": 20,
+                "available": 18,
+                "inUse": 2,
+                "underMaintenance": 0
+            }
+        },
+        {
+            "id": 3,
+            "name": "Computadoras",
+            "quantity": {
+                "total": 15,
+                "available": 12,
+                "inUse": 2,
+                "underMaintenance": 1
+            }
+        }
+    ]
+}
