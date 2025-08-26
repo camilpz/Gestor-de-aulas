@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Bienvenido al gestor de aulas!</h1>
+    <p class="page-subtitle">
+        Elegí una sección para comenzar a administrar tu sistema.
+    </p>
+</div>
+
+<div class="card-container">
+    @for (obj of info; track $index) {
+    <mat-card class="nav-card" [routerLink]="obj.link">
+        <mat-card-title>{{ obj.title }}</mat-card-title>
+        <mat-card-content>
+            <p>{{ obj.description }}</p>
+        </mat-card-content>
+    </mat-card>
+    }
+</div>

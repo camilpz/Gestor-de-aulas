@@ -1,0 +1,24 @@
+<mat-toolbar color='primary'>
+    <a class="app-title" routerLink="/inicio" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Gestor de aulas
+    </a>
+    <span class='spacer'></span>
+
+    <nav class='nav'>
+        <a mat-button class='nav-btn' routerLink='/profesores' routerLinkActive='active-link'
+            [routerLinkActiveOptions]='{ exact: true }'>
+            Profesores
+        </a>
+
+        <a mat-button class='nav-btn' routerLink='/alumnos' routerLinkActive='active-link'
+            [routerLinkActiveOptions]='{ exact: true }'>
+            Alumnos
+        </a>
+
+        <a mat-button class='nav-btn' routerLink='/cursos' routerLinkActive='active-link'
+            [routerLinkActiveOptions]='{ exact: true }'>
+            Cursos
+        </a>
+    </nav>
+</mat-toolbar>

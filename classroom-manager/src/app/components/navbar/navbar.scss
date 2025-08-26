@@ -1,0 +1,51 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+/* layout y separación entre botones */
+.nav {
+    display: flex;
+    gap: 8px;
+    /* separa los botones entre sí */
+}
+
+/* “pill buttons” */
+.nav-btn {
+    border-radius: 9999px;
+    /* súper redondeado */
+    padding: 0 12px;
+    letter-spacing: .2px;
+}
+
+/* hover más marcado sobre toolbar primary */
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* foco accesible (teclado) */
+.nav-btn:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-radius: 9999px;
+}
+
+/* ruta activa: queda “marcado” */
+.nav .active-link {
+    background-color: rgba(255, 255, 255, 0.32);
+    color: #fff;
+    /* mantiene contraste sobre primary */
+    font-weight: 700;
+}
+
+// Título
+
+.app-title {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
