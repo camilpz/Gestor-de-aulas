@@ -1,27 +1,31 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Student } from '../../models/models';
-import { Api } from '../../services/api';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
-import { MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { Student } from '../../models/models';
+import { Api } from '../../services/api';
+import { NewStudentModal } from '../student/new-student-modal/new-student-modal';
+import { SnackbarService } from '../../services/snackbar-service';
 
 @Component({
   selector: 'app-student-table',
-  imports: [MatTableModule, MatButton],
+  imports: [MatTableModule, MatButtonModule, MatIconModule],
   templateUrl: './student-table.html',
   styleUrl: './student-table.scss'
 })
-export class StudentTable implements OnInit{
+export class StudentTable implements OnInit {
   studentsData: Student[] = [];
 
   apiService = inject(Api);
   dialog = inject(MatDialog);
+  snackService = inject(SnackbarService);
 
-  displayedColumns: string[] = ['id', 'name', 'age'];
+  displayedColumns: string[] = ['id', 'name', 'age', 'actions'];
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.fetchStudents();
-      
+
   }
 
   //--------------------Fetch Students--------------------
@@ -36,7 +40,45 @@ export class StudentTable implements OnInit{
     });
   }
 
-  openNewStudentModal(){
+  openNewStudentModal() {
+    const dialogRef = this.dialog.open(NewStudentModal,
+      {
+        width: '400px',
+        panelClass: 'custom-dialog-panel',
+        disableClose: true
+      }
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchStudents();
+      }
+    });
+  }
 
+  editStudent(student: Student) {
+    const dialogRef = this.dialog.open(NewStudentModal,
+      {
+        width: '400px',
+        panelClass: 'custom-dialog-panel',
+        disableClose: true,
+        data: student
+      }
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchStudents();
+      }
+    });
+  }
+
+  deleteStudent(studentId: string) {
+    this.apiService.deleteStudent(studentId).subscribe({
+      next: () => {
+        this.fetchStudents();
+      },
+      error: (error) => {
+        console.error('Error deleting student:', error);
+      }
+    });
   }
 }

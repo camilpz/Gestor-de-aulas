@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { Layout } from './layout/layout';
 import { LayoutModule } from '@angular/cdk/layout';
 import { TeacherTable } from './components/teacher/teacher-table/teacher-table';
-import { StudentTable } from './components/student-table/student-table';
 import { ClassroomTable } from './components/classroom-table/classroom-table';
 import { Index } from './components/index';
+import { StudentTable } from './components/student-table/student-table';
 
 export const routes: Routes = [
     {

@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Teacher } from '../../../models/models';
 import { Api } from '../../../services/api';
 import { SnackbarService } from '../../../services/snackbar-service';
+import { FormErrorService } from '../../../services/form-error-service';
 
 @Component({
   selector: 'app-new-teacher-modal',
@@ -21,6 +22,7 @@ export class NewTeacherModal implements OnInit{
   apiService = inject(Api);
   dialogRef = inject(MatDialogRef<NewTeacherModal>);
   snackService = inject(SnackbarService);
+  formErrorService = inject(FormErrorService);
 
   ngOnInit(): void {
     this.initForm();
@@ -36,25 +38,12 @@ export class NewTeacherModal implements OnInit{
   
 
   showError(controlName: string): boolean {
-    const control = this.teacherForm.get(controlName);
-    return !!control && (control.touched || control.dirty) && control.invalid;
+    return this.formErrorService.showError(this.teacherForm.get(controlName));
   }
 
 
   getErrorMessage(controlName: string): string | null {
-    const control = this.teacherForm.get(controlName);
-
-    if (!control || !control.errors) return null;
-
-    if (control.errors['required']) {
-      return 'Este campo es obligatorio';
-    }
-    if (control.errors['minlength']) {
-      const requiredLength = control.errors['minlength'].requiredLength;
-      return `Debe tener al menos ${requiredLength} caracteres`;
-    }
-
-    return 'Campo inválido';
+    return this.formErrorService.getMessage(this.teacherForm.get(controlName));
   }
 
 
