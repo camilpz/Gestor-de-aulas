@@ -34,9 +34,9 @@
   ],
   "teachers": [
     {
-      "id": "2",
       "name": "Carlos Perez",
-      "subject": "Historia"
+      "subject": "Matemática",
+      "id": "2"
     },
     {
       "id": "3",
@@ -44,9 +44,9 @@
       "subject": "Ingles"
     },
     {
-      "id": "2226",
-      "name": "Karina",
-      "subject": "Economía"
+      "id": "5112",
+      "name": "Enrique",
+      "subject": "Filosofía"
     }
   ],
   "students": [

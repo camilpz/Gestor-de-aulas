@@ -7,6 +7,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { NewTeacherModal } from '../new-teacher-modal/new-teacher-modal';
 import { DeleteTeacherModal } from '../delete-teacher-modal/delete-teacher-modal';
+import { EditTeacherModal } from '../edit-teacher-modal/edit-teacher-modal';
 
 @Component({
   selector: 'app-teacher-table',
@@ -57,7 +58,17 @@ export class TeacherTable implements OnInit {
   }
 
   editTeacher(teacher : Teacher){
-
+    const dialogRef = this.dialog.open(EditTeacherModal, {
+      width: '400px',
+      panelClass: 'custom-dialog-panel',
+      disableClose: true,
+      data: teacher.id
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchTeachers();
+      }
+    });
   }
 
   deleteTeacher(teacherId : string){

@@ -76,9 +76,4 @@ export class NewTeacherModal implements OnInit{
       this.teacherForm.markAllAsTouched();
     }
   }
-
-
-  onCancel(){
-    this.dialogRef.close(false);
-  }
 }
