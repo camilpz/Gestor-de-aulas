@@ -1,5 +1,5 @@
 export interface Classroom{
-    id: number,
+    id: string,
     name: string,
     teachersId: number[],
     studentsId: number[],
@@ -7,19 +7,19 @@ export interface Classroom{
 }
 
 export interface Teacher{
-    id: number,
+    id: string,
     name: string,
     subject: string
 }
 
 export interface Student{
-    id: number,
+    id: string,
     name: string,
     age: number
 }
 
 export interface Resource{
-    id: number,
+    id: string,
     name: string,
     quantity: {
         total: number,

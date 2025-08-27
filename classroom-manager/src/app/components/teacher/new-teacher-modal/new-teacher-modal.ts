@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Api } from '../../services/api';
-import { Teacher } from '../../models/models';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { Teacher } from '../../../models/models';
+import { Api } from '../../../services/api';
+import { SnackbarService } from '../../../services/snackbar-service';
 
 @Component({
   selector: 'app-new-teacher-modal',
@@ -19,6 +20,7 @@ export class NewTeacherModal implements OnInit{
   fb = inject(FormBuilder);
   apiService = inject(Api);
   dialogRef = inject(MatDialogRef<NewTeacherModal>);
+  snackService = inject(SnackbarService);
 
   ngOnInit(): void {
     this.initForm();
@@ -61,12 +63,12 @@ export class NewTeacherModal implements OnInit{
       const teacher = this.teacherForm.value as Teacher;
       this.apiService.postTeacher(teacher).subscribe({
         next: () => {
-          console.log('Profesor creado con éxito');
+          this.snackService.success('Profesor creado con éxito');
           this.teacherForm.reset();
           this.dialogRef.close(true);
         },
         error: (err) => {
-          console.error('Error al crear profesor:', err);
+          this.snackService.error('Error al crear profesor');
         }
       });
     }

@@ -34,11 +34,6 @@
   ],
   "teachers": [
     {
-      "id": "1",
-      "name": "Maria Gonzalez",
-      "subject": "Matematica"
-    },
-    {
       "id": "2",
       "name": "Carlos Perez",
       "subject": "Historia"
@@ -49,19 +44,9 @@
       "subject": "Ingles"
     },
     {
-      "id": "c707",
-      "name": "Carlos",
-      "subject": "Física"
-    },
-    {
-      "id": "e812",
-      "name": "Mariana",
-      "subject": "Biología"
-    },
-    {
-      "id": "2b4c",
-      "name": "Camila",
-      "subject": "Matematicas"
+      "id": "2226",
+      "name": "Karina",
+      "subject": "Economía"
     }
   ],
   "students": [

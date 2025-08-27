@@ -49,4 +49,54 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .mdc-notched-outline__notch { padding-right: 8px; max-width: 100%; }
 }
 
+/* Mensaje sin datos */
+.no-data-cell {
+    text-align: center;
+    padding: 2rem 0;
+}
 
+.badge {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 50px;
+    background: rgb(228, 152, 52);
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Botón arriba */
+.buttons {
+    margin-bottom: 16px;
+}
+
+/* --- TABLA --- */
+
+/* Fila del encabezado */
+.mat-mdc-header-row {
+    background-color: #3f51b5 !important;
+    /* azul */
+}
+
+/* Celdas del encabezado */
+.mat-mdc-header-cell {
+    color: #fff !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Filas normales */
+.mat-mdc-cell {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Tabla con estilo card */
+.mat-mdc-table {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

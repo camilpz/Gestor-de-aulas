@@ -21,16 +21,16 @@ export class Api {
     return this.http.get<Teacher[]>(`${this.jsonServerurl}teachers`);
   }
 
-  getTeacherById(id: number): Observable<Teacher> {
+  getTeacherById(id: string): Observable<Teacher> {
     return this.http.get<Teacher>(`${this.jsonServerurl}teachers/${id}`);
   }
 
-  putTeacher(id: number, teacher: Teacher): Observable<Teacher> {
+  putTeacher(id: string, teacher: Teacher): Observable<Teacher> {
     return this.http.put<Teacher>(`${this.jsonServerurl}teachers/${id}`, teacher);
   }
 
   //Borrar datos en clase!!!
-  deleteTeacher(id: number): Observable<void> {
+  deleteTeacher(id: string): Observable<void> {
     return this.http.delete<void>(`${this.jsonServerurl}teachers/${id}`);
   }
 
@@ -44,15 +44,15 @@ export class Api {
     return this.http.get<Student[]>(`${this.jsonServerurl}students`);
   }
 
-  getStudentById(id: number): Observable<Student> {
+  getStudentById(id: string): Observable<Student> {
     return this.http.get<Student>(`${this.jsonServerurl}students/${id}`);
   }
 
-  putStudent(id: number, student: Student): Observable<Student> {
+  putStudent(id: string, student: Student): Observable<Student> {
     return this.http.put<Student>(`${this.jsonServerurl}students/${id}`, student);
   }
 
-  deleteStudent(id: number): Observable<void> {
+  deleteStudent(id: string): Observable<void> {
     return this.http.delete<void>(`${this.jsonServerurl}students/${id}`);
   }
 

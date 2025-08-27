@@ -1,69 +1,69 @@
-.container {
+.page-header {
     display: flex;
     flex-direction: column;
-    /* <— apila título y descripción */
     align-items: center;
-    /* centra horizontalmente */
-    justify-content: center;
     text-align: center;
-    min-height: 18vh;
-    /* un poco de aire vertical */
-    gap: .5rem;
-    /* separación entre h1 y p */
+    margin: 3rem 1rem 2rem;
+    gap: 0.5rem;
 }
 
 .page-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 800;
     margin: 0;
-    /* evita saltos */
+    color: #2c3e50;
 }
 
 .page-subtitle {
     font-size: 1rem;
     color: #5f6368;
-    /* gris suave */
-    margin: 0;
-    /* limpia los márgenes del p */
     max-width: 60ch;
-    /* ancho legible */
+    margin: 0;
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.card-container {
+.card-grid {
     display: grid;
-    /* antes 280px → ahora 220px (más chicas) */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    /* un poco menos de separación */
-    padding: 1rem 2rem;
-    /* menos padding */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem 2rem;
 }
 
-/* estilo de la card */
 .nav-card {
     cursor: pointer;
-    text-align: center;
-    padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
 
     &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
-    mat-card-title {
-        font-size: 1.4rem;
-        font-weight: 600;
+    mat-card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         margin-bottom: 0.5rem;
     }
 
+    .nav-icon {
+        font-size: 48px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    mat-card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
     mat-card-content {
-        font-size: 1rem;
+        text-align: center;
+        font-size: 0.95rem;
         color: #555;
     }
 }

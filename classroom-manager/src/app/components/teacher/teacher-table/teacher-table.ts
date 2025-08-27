@@ -1,14 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { Teacher } from '../../models/models';
-import { Api } from '../../services/api';
+import { Teacher } from '../../../models/models';
+import { Api } from '../../../services/api';
 import { MatDialog } from '@angular/material/dialog';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { NewTeacherModal } from '../new-teacher-modal/new-teacher-modal';
-import { MatButton } from '@angular/material/button';
+import { DeleteTeacherModal } from '../delete-teacher-modal/delete-teacher-modal';
 
 @Component({
   selector: 'app-teacher-table',
-  imports: [MatTableModule, MatButton],
+  imports: [MatTableModule, MatButtonModule, MatIconModule],
   templateUrl: './teacher-table.html',
   styleUrl: './teacher-table.scss'
 })
@@ -18,7 +20,7 @@ export class TeacherTable implements OnInit {
   apiService = inject(Api);
   dialog = inject(MatDialog);
 
-  displayedColumns: string[] = ['id', 'subject', 'name'];
+  displayedColumns: string[] = ['id', 'subject', 'name', 'actions'];
 
   ngOnInit(): void {
     this.fetchTeachers();
@@ -47,6 +49,23 @@ export class TeacherTable implements OnInit {
         disableClose: true
       }
     );
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchTeachers();
+      }
+    });
+  }
+
+  editTeacher(teacher : Teacher){
+
+  }
+
+  deleteTeacher(teacherId : string){
+    const dialogRef = this.dialog.open(DeleteTeacherModal, {
+      width: '400px',
+      data: teacherId
+    });
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.fetchTeachers();
