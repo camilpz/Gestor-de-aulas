@@ -34,3 +34,16 @@
 .buttons {
     margin-bottom: 16px;
 }
+
+.mat-mdc-header-row,
+.mat-mdc-footer-row,
+.mat-mdc-row {
+    background-color: #3f51b5;
+    color: #fff;
+
+}
+
+.mat-mdc-table{
+    border-radius: 15px;
+    overflow: hidden;
+}

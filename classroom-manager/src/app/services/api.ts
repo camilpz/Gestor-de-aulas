@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Teacher } from '../models/models';
+import { Student, Teacher } from '../models/models';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -35,6 +35,26 @@ export class Api {
   }
 
   //CRUD students
+
+  postStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(`${this.jsonServerurl}students`, student);
+  }
+
+  getStudents(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.jsonServerurl}students`);
+  }
+
+  getStudentById(id: number): Observable<Student> {
+    return this.http.get<Student>(`${this.jsonServerurl}students/${id}`);
+  }
+
+  putStudent(id: number, student: Student): Observable<Student> {
+    return this.http.put<Student>(`${this.jsonServerurl}students/${id}`, student);
+  }
+
+  deleteStudent(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.jsonServerurl}students/${id}`);
+  }
 
   //CRUD Resources
 }
