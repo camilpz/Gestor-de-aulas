@@ -21,8 +21,12 @@ export class FormErrorService {
   };
 
   //--------------------------------Mostrar el error--------------------------------
+  // showError(control: AbstractControl | null | undefined): boolean {
+  //   return !!control?.invalid && (control.touched || control.dirty);
+  // }
+
   showError(control: AbstractControl | null | undefined): boolean {
-    return !!control?.invalid && (control.touched || control.dirty);
+    return !!control?.invalid;
   }
 
 
