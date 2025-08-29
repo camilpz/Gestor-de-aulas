@@ -3,10 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Student } from '../../models/models';
-import { Api } from '../../services/api';
-import { NewStudentModal } from '../student/new-student-modal/new-student-modal';
-import { SnackbarService } from '../../services/snackbar-service';
+import { Student } from '../../../models/models';
+import { Api } from '../../../services/api';
+import { NewStudentModal } from '../new-student-modal/new-student-modal';
+import { SnackbarService } from '../../../services/snackbar-service';
+import { EditStudentModal } from '../edit-student-modal/edit-student-modal';
 
 @Component({
   selector: 'app-student-table',
@@ -56,7 +57,7 @@ export class StudentTable implements OnInit {
   }
 
   editStudent(student: Student) {
-    const dialogRef = this.dialog.open(NewStudentModal,
+    const dialogRef = this.dialog.open(EditStudentModal,
       {
         width: '400px',
         panelClass: 'custom-dialog-panel',

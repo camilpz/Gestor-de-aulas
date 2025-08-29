@@ -1,0 +1,13 @@
+.container {
+    width: min(1100px, 90%);
+    margin: 32px auto;
+}
+
+.mat-column-actions {
+    width: 120px;
+    text-align: center;
+}
+
+.mat-column-actions .mat-mdc-icon-button {
+    margin: 0 2px;
+}

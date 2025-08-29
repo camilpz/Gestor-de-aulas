@@ -4,7 +4,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { TeacherTable } from './components/teacher/teacher-table/teacher-table';
 import { ClassroomTable } from './components/classroom-table/classroom-table';
 import { Index } from './components/index';
-import { StudentTable } from './components/student-table/student-table';
+import { StudentTable } from './components/student/student-table/student-table';
 
 export const routes: Routes = [
     {

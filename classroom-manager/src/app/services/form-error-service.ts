@@ -22,7 +22,7 @@ export class FormErrorService {
 
   //--------------------------------Mostrar el error--------------------------------
   showError(control: AbstractControl | null | undefined): boolean {
-    return !!control && (control.touched || control.dirty) && control.invalid;
+    return !!control?.invalid && (control.touched || control.dirty);
   }
 
 

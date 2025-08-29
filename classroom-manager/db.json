@@ -51,34 +51,24 @@
   ],
   "students": [
     {
-      "id": "1",
       "name": "Anna Lopez",
-      "age": 15
+      "age": "33",
+      "id": "1"
     },
     {
-      "id": "2",
       "name": "Charles Diaz",
-      "age": 16
+      "age": "18",
+      "id": "2"
     },
     {
-      "id": "3",
       "name": "Laura Sanchez",
-      "age": 15
+      "age": "22",
+      "id": "3"
     },
     {
       "id": "4",
       "name": "Diego Torres",
       "age": 17
-    },
-    {
-      "id": "5",
-      "name": "Valentina Castro",
-      "age": 16
-    },
-    {
-      "id": "d0ef",
-      "name": "Manuel",
-      "age": "18"
     }
   ],
   "resources": [

@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Editar Estudiante</h2>
+
+<mat-dialog-content>
+    <form class="form" [formGroup]="studentEditForm">
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" />
+            @if (showError('name')) {
+            <mat-error>{{ getErrorMessage('name') }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>Edad</mat-label>
+            <input matInput formControlName="age" />
+            @if (showError('age')) {
+            <mat-error>{{ getErrorMessage('age') }}</mat-error>
+            }
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button type="button" mat-dialog-close>Cancelar</button>
+
+    @if (status === 'view') {
+    <button mat-raised-button color="primary" (click)="enableEdit()">
+        Actualizar
+    </button>
+    }
+
+    @if (status === 'edit') {
+    <button mat-raised-button color="primary" [disabled]="studentEditForm.invalid || loading" (click)="onSubmit()">
+        Guardar
+    </button>
+    }
+</mat-dialog-actions>
