@@ -1,9 +1,19 @@
 export interface Classroom{
     id: string,
     name: string,
-    teachersId: number[],
+    teachersId: string[],
     studentsId: number[],
-    resourcesIds: number[]
+    resourcesIds?: number[],
+    resources?: Array<{
+        id: string,
+        name: string,
+        quantity: {
+            total: number,
+            available: number,
+            inUse: number,
+            underMaintenance: number
+        }
+    }>
 }
 
 export interface Teacher{

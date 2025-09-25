@@ -1,16 +1,40 @@
 h2 {
     text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e53935;
+    margin-bottom: 1rem;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    min-width: 320px;
+mat-dialog-content {
+    font-size: 1.1rem;
+    color: #374151;
+    background: #fff3f3;
+    border-radius: 12px;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
 }
 
-.actions {
+.actions, mat-dialog-actions {
     display: flex;
     justify-content: flex-end;
-    gap: .5rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+button[mat-button], button[mat-raised-button] {
+    font-weight: 600;
+    border-radius: 8px;
+    min-width: 110px;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+button[mat-raised-button][color="warn"] {
+    background: #e53935;
+    color: #fff;
+}
+
+button[mat-raised-button][color="warn"]:hover {
+    background: #b71c1c;
+    box-shadow: 0 2px 12px rgba(229, 57, 53, 0.15);
 }

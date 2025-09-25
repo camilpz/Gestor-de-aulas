@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>Nuevo profesor</h2>
 
 <mat-dialog-content>
-    <form class="form" [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
         <!-- Name -->
         <mat-form-field appearance="outline" class="field">
             <mat-label>Nombre</mat-label>

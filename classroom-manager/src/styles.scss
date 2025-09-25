@@ -46,8 +46,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .mat-mdc-dialog-content { padding: 16px 20px; overflow: visible; }
   .mat-mdc-dialog-actions { padding: 0 20px 16px; gap: 8px; justify-content: flex-end; }
 
-  .mdc-notched-outline__notch { padding-right: 8px; max-width: 100%; }
+  .mdc-notched-outline__notch {
+    padding-right: 0;
+    max-width: none;
+    overflow: visible;
+  }
+  
 }
+
+mat-form-field { width: 100%; min-width: 0; }
 
 /* Mensaje sin datos */
 .no-data-cell {

@@ -1,0 +1,53 @@
+<h2 mat-dialog-title>Editar aula</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="form" class="form" (ngSubmit)="save()">
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" cdkFocusInitial />
+            @if (showError('name')) { <mat-error>{{ getErrorMessage('name') }}</mat-error> }
+        </mat-form-field>
+
+        <div class="teacher-select-row">
+            <mat-form-field appearance="outline" class="field">
+                <mat-label>Agregar profesor</mat-label>
+                <mat-select formControlName="teacherToAdd">
+                    <mat-option [value]="null" disabled>Selecciona un profesor</mat-option>
+                    @for (t of unassignedTeachers; track t.id) {
+                    <mat-option [value]="t.id">{{ t.name }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-stroked-button color="primary" type="button" class="add-btn" (click)="addTeacher()"
+                [disabled]="!form.get('teacherToAdd')?.value">
+                <mat-icon>check</mat-icon>
+                Aceptar
+            </button>
+        </div>
+
+        <div class="selected-teachers">
+            <mat-chip-set>
+                @if (selectedTeachers.length) {
+                @for (tid of selectedTeachers; track tid) {
+                <mat-chip appearance="outlined">
+                    {{ getTeacherName(tid) }}
+                    <button mat-icon-button matChipRemove aria-label="Quitar" (click)="removeTeacher(tid)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-chip>
+                }
+                } @else {
+                <mat-chip disabled>Sin profesores seleccionados</mat-chip>
+                }
+            </mat-chip-set>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="cancel()" [disabled]="loading">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || loading" (click)="save()">
+        Guardar
+    </button>
+</mat-dialog-actions>

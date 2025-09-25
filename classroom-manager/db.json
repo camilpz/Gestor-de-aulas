@@ -29,6 +29,42 @@
       ],
       "resourcesIds": [
         3
+      ],
+      "resources": [
+        {
+          "id": "1758823990323",
+          "name": "Computadora",
+          "quantity": {
+            "total": 10,
+            "available": 0,
+            "inUse": 0,
+            "underMaintenance": 0
+          }
+        },
+        {
+          "id": "1758824006795",
+          "name": "Sillas",
+          "quantity": {
+            "total": 12,
+            "available": 0,
+            "inUse": 0,
+            "underMaintenance": 0
+          }
+        },
+        {
+          "id": "1758825298359",
+          "name": "Pizarron",
+          "quantity": {
+            "total": 2,
+            "available": 0,
+            "inUse": 0,
+            "underMaintenance": 0
+          }
+        }
+      ],
+      "teachersId": [
+        "3",
+        "af9a"
       ]
     }
   ],
@@ -44,31 +80,21 @@
       "subject": "Ingles"
     },
     {
-      "id": "5112",
-      "name": "Enrique",
-      "subject": "Filosofía"
+      "id": "af9a",
+      "name": "Carlos",
+      "subject": "Matematica"
     }
   ],
   "students": [
-    {
-      "name": "Anna Lopez",
-      "age": "33",
-      "id": "1"
-    },
-    {
-      "name": "Charles Diaz",
-      "age": "18",
-      "id": "2"
-    },
     {
       "name": "Laura Sanchez",
       "age": "22",
       "id": "3"
     },
     {
-      "id": "4",
-      "name": "Diego Torres",
-      "age": 17
+      "id": "bb3d",
+      "name": "Martín",
+      "age": "19"
     }
   ],
   "resources": [

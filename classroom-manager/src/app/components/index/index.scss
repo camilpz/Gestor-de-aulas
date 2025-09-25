@@ -8,17 +8,20 @@
 }
 
 .page-title {
-    font-size: 2.4rem;
-    font-weight: 800;
+    font-size: 2.6rem;
+    font-weight: 900;
     margin: 0;
-    color: #2c3e50;
+    color: #1976d2;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
 }
 
 .page-subtitle {
-    font-size: 1rem;
+    font-size: 1.08rem;
     color: #5f6368;
     max-width: 60ch;
     margin: 0;
+    font-weight: 500;
 }
 
 .card-grid {
@@ -31,11 +34,15 @@
 .nav-card {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 12px;
+    border-radius: 16px;
+    background: #f8fafc;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+    border: 1.5px solid #e3eafc;
 
     &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 24px rgba(25, 118, 210, 0.13);
+        border-color: #1976d2;
     }
 
     mat-card-header {
@@ -47,23 +54,29 @@
     }
 
     .nav-icon {
-        font-size: 48px;
+        font-size: 54px;
         width: 80px;
         height: 80px;
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #1976d2;
+        background: #e3eafc;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
     }
 
-
     mat-card-title {
-        font-size: 1.3rem;
-        font-weight: 600;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #2c3e50;
     }
 
     mat-card-content {
         text-align: center;
-        font-size: 0.95rem;
+        font-size: 1.01rem;
         color: #555;
-    }
+        font-weight: 500;
+    } 
 }

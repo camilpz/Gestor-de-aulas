@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Eliminar aula</h2>
+<mat-dialog-content>
+	¿Estás seguro de que deseas eliminar el aula <b>{{classroom.name}}</b>?
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button mat-button type="button" (click)="cancel()" [disabled]="loading">Cancelar</button>
+	<button mat-raised-button color="warn" (click)="delete()" [disabled]="loading">Eliminar</button>
+</mat-dialog-actions>

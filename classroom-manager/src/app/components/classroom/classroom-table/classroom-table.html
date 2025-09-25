@@ -1,0 +1,66 @@
+<div class="container">
+    <h2>Registro de aulas</h2>
+
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="newClassroom()">Nueva Aula</button>
+    </div>
+
+    <div class="classroom-cards">
+        @for (classroom of classrooms; track $index) {
+        <div class="classroom-card">
+            <div class="card-header">
+                <span class="classroom-title">{{ classroom.name }}</span>
+                <div class="card-actions">
+                    <button mat-icon-button color="primary" (click)="editClassroom(classroom)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="deleteClassroom(classroom)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-icon-button color="accent" (click)="addResource(classroom)">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-section">
+                <strong>Recursos:</strong>
+                @if (getResourcesForClassroom(classroom).length) {
+                @for (res of getResourcesForClassroom(classroom); track $index) {
+                <span class="badge">{{ res.name }} ({{ res.quantity.total }})</span>
+                @if (!$last) {, }
+                }
+                } @else {
+                <span class="badge badge-empty">Sin recursos</span>
+                }
+            </div>
+
+            <div class="card-section">
+                <strong>Profesores:</strong>
+                @if (getTeachersForClassroom(classroom).length) {
+                @for (t of getTeachersForClassroom(classroom); track $index) {
+                {{ t.name }}@if (!$last) {, }
+                }
+                } @else {
+                <span class="badge badge-empty">Sin profesores</span>
+                }
+            </div>
+
+            <div class="card-section">
+                <strong>Alumnos:</strong>
+                @if (getStudentsForClassroom(classroom).length) {
+                @for (s of getStudentsForClassroom(classroom); track $index) {
+                {{ s.name }}@if (!$last) {, }
+                }
+                } @else {
+                <span class="badge badge-empty">Sin alumnos</span>
+                }
+            </div>
+        </div>
+        } @empty {
+        <div class="no-data-cell">
+            <span class="badge badge-empty">No hay aulas para mostrar.</span>
+        </div>
+        }
+    </div>
+</div>
